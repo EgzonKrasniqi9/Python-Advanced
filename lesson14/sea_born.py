@@ -2,26 +2,26 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('avgIQperCountry.csv')
+df = pd.read_csv('avgIQpercountry.csv')
 
 print(df.info())
 
-#Histogram of Average IQ
-plt.figure(figsize=(10,6))
+# Histogram of Average IQ
+plt.figure(figsize=(10, 6))
 sns.histplot(df['Average IQ'])
-plt.title('histogram of Average IQ')
+plt.title('Histogram of Average IQ')
 plt.xlabel('Average IQ')
 plt.ylabel('Frequency')
 plt.tight_layout()
 plt.show()
 
 #heatmap
-df['Population - 2023'] = df['population - 2023'].str.replace(',''').astype(float)
+df['Population - 2023'] = df['Population - 2023'].str.replace(',','').astype(float)
 print(df.info())
 
 numeric_iq_data_loc = df.select_dtypes(include=['number'])
 
-sns.heatmap(numeriic_iq_data_loc.corr(), annot=True, cmap="coolwarm", fmt='.2f')
+sns.heatmap(numeric_iq_data_loc.corr(), annot=True, cmap="coolwarm", fmt='.2f')
 plt.tight_layout()
 plt.show()
 
@@ -30,8 +30,9 @@ plt.show()
 plt.figure(figsize=(12,6))
 sns.set_style('darkgrid')
 sns.boxplot(data=df, x='Continent', y='Average IQ')
-plt.title('Boxplopot of Average IQ by Continent')
+plt.title('Boxplot of Average IQ by Continent')
 plt.xlabel('Continent')
 plt.ylabel('Average IQ')
 plt.tight_layout()
 plt.show()
+
