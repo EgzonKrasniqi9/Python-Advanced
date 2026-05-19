@@ -1,4 +1,3 @@
-from jsonschema.benchmarks.const_vs_enum import invalid
 from pydantic import BaseModel, conint,constr
 #
 # class User(BaseModel):
