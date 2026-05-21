@@ -3,10 +3,10 @@ from typing import List, Optional
 
 class Developer(BaseModel):
     name: str
-    experience: Optional[int]= None
+    experience: Optional[int] = None
 
 class Project(BaseModel):
     title: str
-    description: Optional[str]= None
+    description: Optional[str] = None
     languages: Optional[List[str]] = []
     lead_developer: Developer
