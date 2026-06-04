@@ -1,5 +1,5 @@
 import sqlite3
-from models import Movie, MovieCreate
+from models import Recipe, RecipeCreate
 
 def create_connection():
     connection = sqlite3.connect("movies.db")
@@ -22,7 +22,7 @@ def create_table():
 
 create_table()
 
-def create_movie(movie: MovieCreate ) -> int:
+def create_movie(movie: RecipeCreate ) -> int:
     connection = create_connection()
     cursor = connection.cursor()
     cursor.execute("insert into ,movies (title, director) values (?, ?)", (movie.title, movie.director))
